@@ -1,0 +1,18 @@
+// STRING DE LA NAVEGACION
+export const ROUTES = {
+  LOGEAR: 'login',
+  PADRE: 'home',
+  CRUDS: {
+    PREDETERMINADO: 'crud',
+    PROYECTO: 'proyecto',
+  }
+};
+
+// RUTAS DE LA NAVEGACION
+export const INTERNAL = {
+  LOGEAR: `${ROUTES.LOGEAR}`,
+  PADRE: `${ROUTES.PADRE}`,
+
+  CRUDS: `${ROUTES.CRUDS.PREDETERMINADO}`,
+  CRUD_PROYECTO: `${ROUTES.CRUDS.PROYECTO}`,
+};

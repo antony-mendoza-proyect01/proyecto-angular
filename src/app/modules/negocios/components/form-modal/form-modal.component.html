@@ -1,0 +1,55 @@
+<div class="modal-header">
+  <h4>{{!proyectoArticulo.author === '' ? 'Crear author' : 'Editar author'}}</h4>
+  <a type="button" class="close"
+     (click)="activeModal.dismiss('Canceled')"><i class="fas fa-times"></i></a>
+</div>
+
+<div class="modal-body" >
+  <form [formGroup]="proyectoArticlesForm" #formDir="ngForm"  >
+
+    <div class="row">
+      <div class="col-12 col-sm-12 table-secondary"  >
+        <label for="author">Autor</label>
+        <input type="text"
+               formControlName="author"
+               class="form-control" [ngClass]="{ 'is-invalid': submitted && f.author.errors }"
+               placeholder="Author"
+               id="author">
+        <div *ngIf="submitted && f.author.errors" class="invalid-feedback">
+          <div *ngIf="f.author.errors.required">Autor es requerido</div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-12">
+        <label for="description">Descripcion</label>
+        <input type="text"
+               formControlName="description"
+               class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }"
+               placeholder="description"
+               id="description">
+        <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+          <div *ngIf="f.description.errors.required">Descripcion es requerida</div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-12">
+        <label for="title">Titulo</label>
+        <input type="text"
+               formControlName="title"
+               class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }"
+               placeholder="title"
+               id="title">
+        <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+          <div *ngIf="f.title.errors.required">Titulo es requerido</div>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>
+
+
+<div class="modal-footer ">
+  <button type="button" class="btn btn-sm btn-primary"
+          [disabled]="proyectoArticlesForm.invalid" (click)="onSubmit()">Guardar cambios</button>
+</div>

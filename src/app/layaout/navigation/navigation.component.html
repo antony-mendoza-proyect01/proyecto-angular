@@ -1,0 +1,64 @@
+
+  <nav id="sidebar"  [ngClass]="{'active': active}" >
+    <ul class="list-unstyled components" *ngIf="metadata">
+      <ng-container *ngFor="let data of metadata" >
+        <li class="mb-1">
+          <!--not menu-->  <!--class="active" -->
+          <ng-container *ngIf="!data.activeMenu" >
+            <a [routerLink]="data.link"
+               (click)="_active()"
+               routerLinkActive="active">
+              <i [class]="data.faIcon" ></i>
+              <span class="ml-2">{{data.title}}</span></a>
+          </ng-container>
+
+          <ng-container *ngIf="data.activeMenu">
+            <a
+                id="menu-{{data.id}}"
+                data-toggle="collapse"
+                aria-expanded="true"
+                class="dropdown-toggle">
+
+              <i [class]="data.faIcon" ></i>
+              <span class="ml-1">{{data.title}}</span>
+            </a>
+
+            <ul class="collapse show list-unstyled" id="submenu-{{data.id}}">
+
+              <ng-container *ngFor="let menu of  data.menu">
+                <li >
+                  <!--not submenu-->
+                  <a *ngIf="!menu.activeSubMenu"
+                     (click)="_active()"
+                     [routerLink]="data.link + menu.link"
+                     routerLinkActive="active">{{menu.title}}</a>
+
+                  <!--yes submenu-->
+                  <a *ngIf="menu.activeSubMenu"
+                     (click)="_active()"
+                     href="#submenu-{{menu.id}}"
+                     data-toggle="collapse"
+                     aria-expanded="false"
+                     class="dropdown-toggle">{{menu.title}}</a>
+                  <ul *ngIf="menu.activeSubMenu" class="collapse list-unstyled " id="submenu-{{menu.id}}">
+                    <ng-container *ngFor="let submenu of  menu.subMenu">
+                      <li>
+                        <a class="submenu"
+                           [routerLink] ="data.link + menu.link + submenu.link"
+                           routerLinkActive="active">{{submenu.title}}</a>
+                      </li>
+                    </ng-container>
+                  </ul>
+                </li>
+              </ng-container>
+
+            </ul>
+          </ng-container>
+
+          <!--yes menu--><!--class="active" -->
+
+        </li>
+      </ng-container>
+    </ul>
+
+  </nav>

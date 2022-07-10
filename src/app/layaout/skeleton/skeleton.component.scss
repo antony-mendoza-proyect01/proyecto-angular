@@ -1,0 +1,67 @@
+@import "src/scss/variables";
+/**********************
+    CONTENT STYLE
+***********************/
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+#content {
+  width: 100%;
+  min-height: 100vh;
+  transition: all 0.3s;
+  .content-router{
+    width: 100%;
+    padding: 15px 0;
+  }
+  .header-fixed{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1039;
+  }
+}
+.overlay {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 998;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  &.active {
+    display: block;
+    opacity: 1;
+  }
+}
+.content-page{
+  display: flex;
+  height: 100%;
+  margin-top: $header-size;
+}
+
+/**********************
+    CONTENT STYLE
+***********************/
+
+/**********************
+    MEDIAQUERIES
+***********************/
+@media (max-width: $breakpoint-tablet) {
+  #content {
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+    .content-router{
+      margin: 0;
+      padding: 10px 0 0;
+    }
+  }
+}
+/**********************
+    MEDIAQUERIES
+***********************/

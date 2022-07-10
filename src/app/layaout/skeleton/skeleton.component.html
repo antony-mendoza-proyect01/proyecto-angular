@@ -1,0 +1,45 @@
+
+<div class="wrapper"  id="wrapper"  #wrapper>
+
+  <!-------------------------------------------
+  Init, Page Content
+---------------------------------------------->
+  <div id="content"  #content>
+    <app-header class="header-fixed"
+                [active]="active"
+                [user]="user"
+      (activeEvent)="_activeEvent($event)"></app-header>
+
+    <div class="content-page">
+      <!-------------------------------------------
+      Init, navigation
+      ------------------------------------------->
+      <app-navigation [active]="active"
+                      [metadata]="navigation"
+                      (activeEvent)="_activeEventComponent( $event )"></app-navigation>
+      <!-------------------------------------------
+        End, navigation
+      ------------------------------------------->
+      <div class="container-fluid">
+        <!-------------------------------------------
+        Init, Router Content
+      ---------------------------------------------->
+        <div class="content-router">
+          <router-outlet></router-outlet>
+        </div>
+        <!-------------------------------------------
+        Init, Router Content
+      ---------------------------------------------->
+      </div>
+
+    </div>
+
+  </div>
+  <!-------------------------------------------
+  End, Page Content
+  ---------------------------------------------->
+</div>
+
+<div class="overlay" (click)="_activeEvent(false)"  [ngClass]="{'active': active}"></div>
+
+

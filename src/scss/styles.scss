@@ -1,0 +1,74 @@
+
+// Variables
+@import "src/scss/_variables";
+
+
+/* ========================================================
+                   parametros
+========================================================*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  outline: 0;
+}
+body, html{
+  height: 100%;
+  font-family: 'Rubik', sans-serif;
+}
+/* ========================================================
+                   aplicativo
+========================================================*/
+.texto-primary{
+  font-size: $primary-letter-size;
+}
+.texto-secundario{
+  font-size: $secondary-letter-size;
+}
+.text-color-primary, label{
+  color: $color-text;
+  font-size: $primary-letter-size;
+}
+.text-color-secundario{
+  color: $color-text-secondary;
+  font-size: $secondary-letter-size;
+}
+p, h1, h2, h3, h4, h5, h6, label{
+  margin: 0;
+}
+a,
+a:hover,
+a:focus {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+  transition: all $transition-time;
+}
+.btn {
+  letter-spacing: 0.5px;
+  transition: transform $transition-time ease-in;
+}
+.btn-primary{
+  background-color: $primary-color;
+  border-color: $primary-color;
+}
+.btn-secondary{
+  background-color: $secondary-color;
+  border-color: $secondary-color;
+}
+.btn-white{
+  background-color: white;
+  border-color: white;
+}
+.table {
+  & thead th, & tfoot th{
+    background-color: $primary-color;
+    color: white;
+    font-weight: 500 !important;
+    border-top: none;
+    border-bottom: none;
+  }
+}

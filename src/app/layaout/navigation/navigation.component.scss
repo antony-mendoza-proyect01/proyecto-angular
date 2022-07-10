@@ -1,0 +1,101 @@
+@import "src/scss/variables";
+
+#sidebar {
+  background: $primary-color-dark;
+  min-width: $navigation-size;
+  max-width: $navigation-size;
+  height: 100%;
+  color: white;
+  transition: all 0.3s;
+  padding: 10px 0 50px;
+  &.active {
+    margin-left: -$navigation-size;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  #sidebar {
+    width: $navigation-size;
+    min-width: initial;
+    max-width: initial;
+    position: fixed;
+    top: 0;
+    left: -$navigation-size;
+    height: 100vh;
+    z-index: 9999;
+    background: $primary-color-dark;
+    color: #fff;
+    transition: all 0.3s;
+    overflow-y: scroll;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    &.active {
+      margin-left: 0;
+      left: 0;
+    }
+  }
+}
+
+ul li{
+
+  a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding:  $navigation-a-padding-y $navigation-a-padding-x;
+    font-size: $secondary-letter-size;
+    background-color: $primary-color;
+    text-transform: uppercase;
+
+    &:hover, &.active {
+      color: $primary-color;
+      background-color: white;
+    }
+    i{
+      min-width: 20px;
+      min-height: 20px;
+      font-size: 1.25rem;
+    }
+  }
+  &.active>a,
+  a[aria-expanded="true"] {/*
+    color: white;
+    background: $secondary-color;*/
+  }
+}
+a[data-toggle="collapse"] {
+  position: relative;
+}
+.dropdown-toggle::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+ul ul a {
+  font-size: $tercer-letter-size !important;
+  padding-left: $navigation-a-padding-x + 1.5 ;
+  text-transform: capitalize !important;
+}
+.submenu{
+  padding-left: $navigation-a-padding-x + 2 !important;
+}
+.icon{
+  height: 30px;
+  width: 30px;
+  background-size:cover;
+  background-position:50% 50%;
+}
+.active{
+
+}
+select.ng-valid ~ label{
+
+}
+
+
+@media (max-width: $breakpoint-tablet) {
+
+
+
+}

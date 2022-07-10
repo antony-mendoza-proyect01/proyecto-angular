@@ -1,0 +1,42 @@
+<header class="header  ">
+  <div class="header-content">
+    <div class="header-content__logo">
+      <div class="header-content__logo__title">
+        <div class="text-center w-100">
+          <h2>Universidad</h2>
+        </div>
+
+        <a class="hover" (click)="toggle()">
+          <i class="fas fa-align-justify text-secondary"></i>
+        </a>
+      </div>
+
+    </div>
+
+
+    <div class="header-content__complete">
+      <div class="header-content__complete_crumb">
+        <!--<app-title-h3 [title]="title ? title: 'Menu principal'"
+                      font="font-weight" type="primary" margin="m-0 ml-3"></app-title-h3>-->
+      </div>
+
+      <div class="header-content__complete__icon">
+
+        <!--<a class="hover">
+          <i class="fas fa-bell text-secondary  "></i>
+        </a>-->
+
+        <div class="header-content__complete__icon_user lh-1">
+          <p class="text-center m-0" >{{user}}</p>
+        </div>
+
+        <a class="hover hover-exit" (click)="cerrarSesion()"
+           placement="bottom"   ngbTooltip="Salir">
+          <i class="fas fa-sign-out-alt text-danger "></i>
+        </a>
+      </div>
+    </div>
+
+
+  </div>
+</header>
